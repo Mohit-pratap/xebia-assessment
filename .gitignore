@@ -1,0 +1,10 @@
+.next
+node_modules
+.idea
+yarn-error.log
+next-env.d.ts
+testresults
+cypress/videos
+cypress/screenshots
+junit.xml
+tsconfig.tsbuildinfo

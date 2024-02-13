@@ -1,0 +1,196 @@
+{
+  "env": {
+    "node": true,
+    "browser": true,
+    "jest": true
+  },
+  "root": true,
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "sourceType": "module"
+  },
+  "extends": [
+    "airbnb",
+    "airbnb-typescript",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "sonarqube",
+    "plugin:eslint-comments/recommended",
+    "plugin:promise/recommended",
+    "plugin:unicorn/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:@next/next/recommended",
+    "prettier"
+  ],
+  "rules": {
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "import/prefer-default-export": "off",
+    "import/namespace": "off",
+    "@typescript-eslint/no-unsafe-argument": "off",
+    "@typescript-eslint/no-unsafe-return": "off",
+    "@typescript-eslint/no-floating-promises": "off",
+    "import/no-cycle": [2, { "maxDepth": 1 }],
+    "react/jsx-props-no-spreading": "off",
+    "jsx-a11y/media-has-caption": "off",
+    "unicorn/prevent-abbreviations": "off",
+    "unicorn/filename-case": "off",
+    "unicorn/no-null": "off",
+    "unicorn/no-array-for-each": "off",
+    "import/no-extraneous-dependencies": "off",
+    "@typescript-eslint/restrict-template-expressions": "off",
+    "unicorn/no-useless-undefined": "off",
+    "react/no-danger": "off",
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "ForInStatement",
+        "message": "for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array."
+      },
+      {
+        "selector": "LabeledStatement",
+        "message": "Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand."
+      },
+      {
+        "selector": "WithStatement",
+        "message": "`with` is disallowed in strict mode because it makes code impossible to predict and optimize."
+      }
+    ],
+    "unicorn/no-array-callback-reference": "off",
+    "no-void": "off",
+    "react/destructuring-assignment": "off",
+    "unicorn/consistent-destructuring": "off",
+    "react/require-default-props": "off",
+    "unicorn/prefer-node-protocol": "off",
+    "@typescript-eslint/no-namespace": ["error", { "allowDeclarations": true }],
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "react/no-unknown-property": [2, { "ignore": ["sx", "mask-type"] }],
+    "react/jsx-no-useless-fragment": [
+      "error",
+      {
+        "allowExpressions": true
+      }
+    ],
+    // This rule sees `import type { X } from 'xx'` and `import { x } from 'xx'` as same import
+    "no-duplicate-imports": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "always",
+        "jsx": "always",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "react/jsx-boolean-value": ["error", "never"],
+    "@typescript-eslint/no-misused-promises": [
+      "error",
+      {
+        "checksVoidReturn": false
+      }
+    ],
+    "unicorn/prefer-query-selector": "off",
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/indent": "off",
+    "@typescript-eslint/interface-name-prefix": "off",
+    "@typescript-eslint/no-parameter-properties": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/no-unused-vars": "error",
+    "react/jsx-wrap-multilines": [
+      "warn",
+      {
+        "declaration": "parens-new-line",
+        "assignment": "parens-new-line",
+        "return": "parens-new-line",
+        "arrow": "parens-new-line",
+        "condition": "parens-new-line",
+        "logical": "ignore",
+        "prop": "ignore"
+      }
+    ],
+    "no-use-before-define": "off",
+    "camelcase": "off",
+    "class-methods-use-this": "off",
+    "import/first": "off",
+    "indent": "off",
+    "@typescript-eslint/no-use-before-define": "off",
+    "max-classes-per-file": "off",
+    "no-return-assign": "off",
+    "no-underscore-dangle": "off",
+    "no-useless-constructor": "off",
+    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/rules-of-hooks": "error",
+    "react/jsx-filename-extension": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "react/no-multi-comp": "off",
+    "react/no-unescaped-entities": "warn",
+    "react/static-property-placement": "off",
+    "react/state-in-constructor": "off",
+    "react/sort-comp": "warn",
+    "react/no-unused-prop-types": "off",
+    // this is a bug in the no-shadow rule: https://stackoverflow.com/questions/63961803/eslint-says-all-enums-in-typescript-app-are-already-declared-in-the-upper-scope
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["error"],
+    "testing-library/no-unnecessary-act": "off",
+    "testing-library/no-node-access": "off",
+    "testing-library/render-result-naming-convention": "off"
+  },
+  "overrides": [
+    {
+      "files": [
+        "*.test.ts",
+        "*.test.tsx",
+        "setupTests.ts",
+        "setupTests.storybook.ts"
+      ],
+      "extends": "plugin:jest/recommended",
+      "rules": {
+        "import/no-extraneous-dependencies": "off",
+        "jest/no-mocks-import": "off"
+      }
+    },
+    {
+      "files": ["config.js"],
+      "rules": {
+        "unicorn/prefer-module": "off"
+      }
+    },
+    {
+      "files": ["*.stories.tsx"],
+      "rules": {
+        "react/prop-types": "off",
+        "import/no-extraneous-dependencies": "off"
+      }
+    }
+  ],
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "typescript": {
+        "project": "./tsconfig.json"
+      },
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx", ".d.ts"]
+      }
+    }
+  }
+}
