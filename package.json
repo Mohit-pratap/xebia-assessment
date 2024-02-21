@@ -9,7 +9,6 @@
     "build": "next build",
     "check-prettier": "prettier --check .",
     "check-types": "tsc --pretty --noEmit --incremental",
-    "prepare": "husky install",
     "start": "next start",
     "test": "cross-env NODE_OPTIONS=\"--experimental-vm-modules --no-warnings\" jest --maxWorkers=50%",
     "test-e2e": "start-server-and-test 'yarn build && yarn start' http://localhost:3000 'yarn cypress'",
