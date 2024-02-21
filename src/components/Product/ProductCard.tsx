@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {FC, useState, useEffect } from 'react';
 import { CustomCard } from '../CustomCard';
 import { 
   Box, 
@@ -9,29 +9,13 @@ import {
   Spinner 
 } from "theme-ui";
 
+type Props = {
+    loading: boolean;
+    data: any;
+};
 
-export const ProductCard = () => {
-
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    setLoading(true)
-    try {
-      const response = await fetch('../../../api/productsController/getProducts');
-      const jsonData = await response.json();
-      setData(jsonData);
-      setLoading(false)
-    } catch (error) {
-      console.error('Error fetching data:', error);
-      setLoading(false)
-    }
-  };
-
+export const ProductCard: FC<Props> = (props) => {
+    const {loading, data} = props;
   return (
     <>
         {
