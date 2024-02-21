@@ -93,6 +93,8 @@ Please tick the relevant boxes:
 
 > How long did it take you to finish the above tasks?
 
+3 Hours
+
 #### Additional comments
 
 > Enter any comments you might have, describe additional tasks you completed:
