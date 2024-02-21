@@ -81,11 +81,11 @@ Please fill out the table below with (sub)tasks you have completed to review the
 
 Please tick the relevant boxes:
 
-- [ ] Products page
-- [ ] Avatar from context
-- [ ] Hide menu onScroll
-- [ ] Unit test
-- [ ] Dynamic user avatar
+- [✅] Products page
+- [✅] Avatar from context
+- [✅] Hide menu onScroll
+- [✅] Unit test
+- [✅] Dynamic user avatar
 - [ ] Added `User` typing to the API endpoint and `UserContext`
 - [ ] Cypress tests
 
