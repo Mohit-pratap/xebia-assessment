@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { Global, css } from '@emotion/react';
 import { Container } from 'theme-ui';
+import { UserProvider } from '../../contexts/UserContext/userContext';
 
 import { Menu } from '../Menu';
 
@@ -8,7 +9,7 @@ type Props = {
   children?: React.ReactNode;
 };
 export const Layout: FC<Props> = ({ children }) => (
-  <>
+  <UserProvider>
     <Global
       styles={css`
         html,
@@ -34,5 +35,5 @@ export const Layout: FC<Props> = ({ children }) => (
         {children}
       </Container>
     </Container>
-  </>
+  </UserProvider>
 );
